@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>
+
+    <div th:replace="views/public/layout/layout :: head"></div>
+
+</head>
+
+<body>
+
+		<!-- *** HEADER ***-->
+		
+	<div th:fragment="header">
+		<div th:replace="views/public/layout/header"></div>
+	</div>
+		<!-- *** HEADER END ***-->
+
+		<!-- *** CONTENIDO ***-->
+		
+
+		<!-- *** FOOTER Y COPYRIGHT *** -->
+	<div th:fragment="footer">
+		<div th:replace="views/public/layout/footer"></div>
+	</div>
+
+		<!-- *** FOOTER Y COPYRIGHT END *** -->
+
+<!--====== Javascripts & Jquery ======-->
+	<script src="public/js/jquery-3.2.1.min.js"></script>
+	<script src="public/js/bootstrap.min.js"></script>
+	<script src="public/js/jquery.slicknav.min.js"></script>
+	<script src="public/js/owl.carousel.min.js"></script>
+	<script src="public/js/jquery.nicescroll.min.js"></script>
+	<script src="public/js/jquery.zoom.min.js"></script>
+	<script src="public/js/jquery-ui.min.js"></script>
+	<script src="public/js/main.js"></script>
+</body>
+
+</html>

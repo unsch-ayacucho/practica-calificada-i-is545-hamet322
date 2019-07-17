@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>
+
+<div th:replace="views/public/layout/layout :: head"></div>
+
+</head>
+
+<body>
+
+	<!-- *** HEADER ***-->
+
+	<div th:fragment="header">
+		<div th:replace="views/public/layout/header"></div>
+	</div>
+	<!-- *** HEADER END ***-->
+
+	<!-- *** CONTENIDO ***-->
+	<!-- Page info -->
+	<div class="page-top-info">
+		<div class="container">
+			<h4>Your cart</h4>
+			<div class="site-pagination">
+				<a href="">Home</a> / <a href="">Your cart</a>
+			</div>
+		</div>
+	</div>
+	<!-- Page info end -->
+
+
+	<!-- cart section start -->
+	<section class="cart-section spad">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8">
+					<div class="cart-table">
+						<h3>Your Cart</h3>
+						<div class="cart-table-warp">
+							<table>
+								<thead>
+									<tr>
+										<th class="product-th">Product</th>
+										<th class="quy-th">Quantity</th>
+										<th class="size-th">SizeSize</th>
+										<th class="total-th">Price</th>
+									</tr>
+								</thead>
+								<tbody>
+									<th:block th:each="item, i : ${session.cart}">
+										<tr>
+											<td><a
+												th:href="@{'/product/detail/' + ${item.product.idproduct}}">
+													<img th:src="@{'/public/img/' + ${item.product.urlimage}}"
+													th:alt="${item.product.name}">
+											</a></td>
+											<td><a
+												th:href="@{'/product/detail/' + ${item.product.idproduct}}">
+													<span th:text="${item.product.name}"></span>
+											</a></td>
+											<td><span th:text="${item.quantity}"></span></td>
+											<td>$ <span th:text="${item.product.price}"></span>
+											</td>
+											<td>$0.00</td>
+											<td>$ <span
+												th:text="${item.product.price * item.quantity}"></span>
+											</td>
+										</tr>
+									</th:block>
+								</tbody>
+							</table>
+						</div>
+						<div class="total-cost">
+							<tr>
+								<th colspan="5">Total</th>
+								<th id="total" colspan="2"></th>
+							</tr>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 card-right">
+					<form class="promo-code-form">
+						<input type="text" placeholder="Enter promo code">
+						<button>Submit</button>
+					</form>
+					<a href="" class="site-btn">Proceed to checkout</a> <a href=""
+						class="site-btn sb-dark">Continue shopping</a>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- cart section end -->
+
+	<!-- Related product section -->
+	<section class="related-product-section">
+		<div class="container">
+			<div class="section-title text-uppercase">
+				<h2>Continue Shopping</h2>
+			</div>
+			<div class="row">
+				<div class="col-lg-3 col-sm-6">
+					<div class="product-item">
+						<div class="pi-pic">
+							<div class="tag-new">New</div>
+							<img src="/public/img/product/2.jpg" alt="">
+							<div class="pi-links">
+								<a href="#" class="add-card"><i class="flaticon-bag"></i><span>ADD
+										TO CART</span></a> <a href="#" class="wishlist-btn"><i
+									class="flaticon-heart"></i></a>
+							</div>
+						</div>
+						<div class="pi-text">
+							<h6>$35,00</h6>
+							<p>Black and White Stripes Dress</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3 col-sm-6">
+					<div class="product-item">
+						<div class="pi-pic">
+							<img src="/public/img/product/5.jpg" alt="">
+							<div class="pi-links">
+								<a href="#" class="add-card"><i class="flaticon-bag"></i><span>ADD
+										TO CART</span></a> <a href="#" class="wishlist-btn"><i
+									class="flaticon-heart"></i></a>
+							</div>
+						</div>
+						<div class="pi-text">
+							<h6>$35,00</h6>
+							<p>Flamboyant Pink Top</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3 col-sm-6">
+					<div class="product-item">
+						<div class="pi-pic">
+							<img src="/public/img/product/9.jpg" alt="">
+							<div class="pi-links">
+								<a href="#" class="add-card"><i class="flaticon-bag"></i><span>ADD
+										TO CART</span></a> <a href="#" class="wishlist-btn"><i
+									class="flaticon-heart"></i></a>
+							</div>
+						</div>
+						<div class="pi-text">
+							<h6>$35,00</h6>
+							<p>Flamboyant Pink Top</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3 col-sm-6">
+					<div class="product-item">
+						<div class="pi-pic">
+							<img src="/public/img/product/1.jpg" alt="">
+							<div class="pi-links">
+								<a href="#" class="add-card"><i class="flaticon-bag"></i><span>ADD
+										TO CART</span></a> <a href="#" class="wishlist-btn"><i
+									class="flaticon-heart"></i></a>
+							</div>
+						</div>
+						<div class="pi-text">
+							<h6>$35,00</h6>
+							<p>Flamboyant Pink Top</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Related product section end -->
+
+
+	<!-- *** FOOTER Y COPYRIGHT *** -->
+	<div th:fragment="footer">
+		<div th:replace="views/public/layout/footer"></div>
+	</div>
+
+	<!-- *** FOOTER Y COPYRIGHT END *** -->
+
+	<!--====== Javascripts & Jquery ======-->
+	<script src="public/js/jquery-3.2.1.min.js"></script>
+	<script src="public/js/bootstrap.min.js"></script>
+	<script src="public/js/jquery.slicknav.min.js"></script>
+	<script src="public/js/owl.carousel.min.js"></script>
+	<script src="public/js/jquery.nicescroll.min.js"></script>
+	<script src="public/js/jquery.zoom.min.js"></script>
+	<script src="public/js/jquery-ui.min.js"></script>
+	<script src="public/js/main.js"></script>
+	
+	<script type="text/javascript">
+    	
+    	var sum = 0;
+    	$("#cart tr").not(':first').not(':last').each(function() {
+    	  	// extrae el subtotal de la tabla
+    	  	var subtotal = $(this).find('td:eq(5)').text();
+    	  	// extrae sólo la parte numérica
+    	  	var num = Number(subtotal .replace(/[^0-9\.]+/g,""));
+    	  	sum +=  num;
+    	});
+
+    	document.getElementById("total").textContent='$ ' + sum;
+    	
+    </script>
+</body>
+
+</html>

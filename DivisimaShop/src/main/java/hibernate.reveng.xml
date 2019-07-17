@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.org/dtd/hibernate-reverse-engineering-3.0.dtd" >
+
+<hibernate-reverse-engineering>
+  <table-filter match-catalog="divisimabd" match-name="account"/>
+  <table-filter match-catalog="divisimabd" match-name="account_profile"/>
+  <table-filter match-catalog="divisimabd" match-name="brand"/>
+  <table-filter match-catalog="divisimabd" match-name="category"/>
+  <table-filter match-catalog="divisimabd" match-name="colour"/>
+  <table-filter match-catalog="divisimabd" match-name="module"/>
+  <table-filter match-catalog="divisimabd" match-name="option"/>
+  <table-filter match-catalog="divisimabd" match-name="orders"/>
+  <table-filter match-catalog="divisimabd" match-name="ordersdetail"/>
+  <table-filter match-catalog="divisimabd" match-name="partner"/>
+  <table-filter match-catalog="divisimabd" match-name="product"/>
+  <table-filter match-catalog="divisimabd" match-name="profile"/>
+  <table-filter match-catalog="divisimabd" match-name="profile_option"/>
+  <table-filter match-catalog="divisimabd" match-name="submodule"/>
+</hibernate-reverse-engineering>
