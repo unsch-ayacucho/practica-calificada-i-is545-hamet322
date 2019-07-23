@@ -2,6 +2,7 @@ package pe.edu.unsch.entities;
 // Generated 16/07/2019 01:54:40 PM by Hibernate Tools 5.1.10.Final
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,6 +10,7 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -24,6 +26,7 @@ public class Category implements java.io.Serializable {
 	private Integer status;
 	private Integer parentid;
 	private Set<Product> products = new HashSet<Product>(0);
+	private List<Category> categories;
 
 	public Category() {
 	}
@@ -81,6 +84,15 @@ public class Category implements java.io.Serializable {
 
 	public void setProducts(Set<Product> products) {
 		this.products = products;
+	}
+	@OneToMany
+	@JoinColumn(name = "parentid", referencedColumnName = "idcategory")
+	public List<Category> getCategories() {
+		return categories;
+	}
+
+	public void setCategories(List<Category> categories) {
+		this.categories = categories;
 	}
 
 }
